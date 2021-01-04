@@ -1,4 +1,4 @@
-# Repo Title REPLACE
+# Voice Bridge Java
 <a href="http://dev.bandwidth.com"><img src="https://s3.amazonaws.com/bwdemos/BW-VMP.png"/></a>
 </div>
 
@@ -6,7 +6,7 @@
 
 <!-- TOC -->
 
-- [Repo Title REPLACE](#repo-title-replace)
+- [Voice Bridge Java](#voice-bridge-java)
 - [Description](#description)
 - [Bandwidth](#bandwidth)
 - [Environmental Variables](#environmental-variables)
