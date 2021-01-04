@@ -24,20 +24,20 @@ public class CallbacksController {
 
     Logger logger = LoggerFactory.getLogger(CallbacksController.class);
 
-    private String username = System.getenv("BANDWIDTH_USERNAME");
-    private String password = System.getenv("BANDWIDTH_PASSWORD");
-    private String accountId = System.getenv("BANDWIDTH_ACCOUNT_ID");
-    private String applicationId = System.getenv("BANDWIDTH_VOICE_APPLICATION_ID");
-    private String baseUrl = System.getenv("BASE_URL");
-    private String bwPhoneNumber = System.getenv("BANDWIDTH_PHONE_NUMBER");
-    private String maskedPhoneNumber = System.getenv("MASKED_PHONE_NUMBER");
+    private final String username = System.getenv("BANDWIDTH_USERNAME");
+    private final String password = System.getenv("BANDWIDTH_PASSWORD");
+    private final String accountId = System.getenv("BANDWIDTH_ACCOUNT_ID");
+    private final String applicationId = System.getenv("BANDWIDTH_VOICE_APPLICATION_ID");
+    private final String baseUrl = System.getenv("BASE_URL");
+    private final String bwPhoneNumber = System.getenv("BANDWIDTH_PHONE_NUMBER");
+    private final String maskedPhoneNumber = System.getenv("MASKED_PHONE_NUMBER");
 
-    private BandwidthClient client = new BandwidthClient.Builder()
+    private final BandwidthClient client = new BandwidthClient.Builder()
             .voiceBasicAuthCredentials(username, password)
             .environment(Environment.PRODUCTION)
             .build();
 
-    private APIController controller = client.getVoiceClient().getAPIController();
+    private final APIController controller = client.getVoiceClient().getAPIController();
 
 
 
@@ -55,10 +55,11 @@ public class CallbacksController {
                     .tag(callback.getCallId()) // call Id will be used to bridge
                     .to(maskedPhoneNumber)
                     .from(bwPhoneNumber)
-                    .answerUrl(baseUrl + "callbacks/outbound")
+                    .answerUrl(baseUrl + "/callbacks/outbound")
                     .applicationId(applicationId)
                     .build());
             } catch (ApiException e) {
+                logger.info(e.getMessage());
                 return response.add(
                     SpeakSentence.builder().text( "An error occured.  Ending call").build()
                 ).toBXML();
@@ -77,7 +78,7 @@ public class CallbacksController {
     }
 
     @RequestMapping("/outbound")
-    public String outboundCall(@RequestBody VoiceCallback callback) throws IOException  {
+    public String outboundCall(@RequestBody VoiceCallback callback) {
 
         Response response = new Response();
 
