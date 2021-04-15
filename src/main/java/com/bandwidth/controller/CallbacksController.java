@@ -24,13 +24,13 @@ public class CallbacksController {
 
     Logger logger = LoggerFactory.getLogger(CallbacksController.class);
 
-    private final String username = System.getenv("BANDWIDTH_USERNAME");
-    private final String password = System.getenv("BANDWIDTH_PASSWORD");
-    private final String accountId = System.getenv("BANDWIDTH_ACCOUNT_ID");
-    private final String applicationId = System.getenv("BANDWIDTH_VOICE_APPLICATION_ID");
-    private final String baseUrl = System.getenv("BASE_URL");
-    private final String bwPhoneNumber = System.getenv("BANDWIDTH_PHONE_NUMBER");
-    private final String maskedPhoneNumber = System.getenv("MASKED_PHONE_NUMBER");
+    private final String username = System.getenv("BW_USERNAME");
+    private final String password = System.getenv("BW_PASSWORD");
+    private final String accountId = System.getenv("BW_ACCOUNT_ID");
+    private final String applicationId = System.getenv("BW_VOICE_APPLICATION_ID");
+    private final String baseUrl = System.getenv("BASE_CALLBACK_URL");
+    private final String bwPhoneNumber = System.getenv("BW_NUMBER");
+    private final String maskedPhoneNumber = System.getenv("USER_NUMBER");
 
     private final BandwidthClient client = new BandwidthClient.Builder()
             .voiceBasicAuthCredentials(username, password)
