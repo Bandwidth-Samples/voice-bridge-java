@@ -35,7 +35,7 @@ BW_PASSWORD                   # Your Bandwidth API Secret
 BW_NUMBER                     # Your The Bandwidth Phone Number (E164 Format)
 USER_NUMBER                   # A phone number to mask with the BW_NUMBER (E164 Format)
 BW_VOICE_APPLICATION_ID       # Your Voice Application Id created in the dashboard
-BASE_CALLBACK_URL             # Your public base url
+BW_BASE_URL                   # Your public base url
 ```
 
 # Callback URLs
