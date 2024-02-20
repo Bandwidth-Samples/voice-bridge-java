@@ -42,7 +42,7 @@ public class CallbacksController {
     private final String password = System.getenv("BW_PASSWORD");
     private final String accountId = System.getenv("BW_ACCOUNT_ID");
     private final String applicationId = System.getenv("BW_VOICE_APPLICATION_ID");
-    private final String baseUrl = System.getenv("BW_BASE_URL");
+    private final String baseUrl = System.getenv("BASE_CALLBACK_URL");
     private final String bwPhoneNumber = System.getenv("BW_NUMBER");
     private final String maskedPhoneNumber = System.getenv("USER_NUMBER");
 
