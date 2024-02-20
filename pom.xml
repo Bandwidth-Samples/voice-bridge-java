@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.bandwidth.sdk</groupId>
             <artifactId>bandwidth-sdk</artifactId>
-            <version>3.11.1</version>
+            <version>9.1.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -68,7 +68,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
                 <configuration>
                   <!-- or whatever version you use -->
                   <source>${java.version}</source>
