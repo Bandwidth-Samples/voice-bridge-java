@@ -1,6 +1,6 @@
 # Voice Bridge
 
-<a href="https://dev.bandwidth.com/docs/voice/quickStart">
+<a href="https://dev.bandwidth.com/docs/voice/programmable-voice/quickStart/">
   <img src="./icon-voice.svg" title="Voice Quick Start Guide" alt="Voice Quick Start Guide"/>
 </a>
 
@@ -18,7 +18,15 @@
 <!-- /TOC -->
 
 # Description
-This sample app shows how to hide (mask) a phone number through a Bandwidth voice API using Bandwidth's Bridge BXML verb. After setting up your Bandwidth Application to point to the URL running this application, anyone who calls your Bandwidth phone number will be bridged to the masked number without either party members knowing the other's phone number.
+This sample app masks a phone call through a Bandwidth phone number using Bandwidth's Bridge BXML verb. Once configured, anyone who calls your Bandwidth phone number will be bridged to the masked number without either party members knowing the other's phone number.
+
+In the Bandwidth Dashboard, set the Application's `Call initiated callback URL` to `<BASE_CALLBACK_URL>/callbacks/inbound/voice`. This can also be done via the Dashboard API by setting `CallInitiatedCallbackUrl`. Once configured, any calls made to a number associated with that application will cause this app to create a new call to the `USER_NUMBER`. This call will come from your `BW_NUMBER` and the original call will be bridged to this one once accepted.
+
+Once the callee at `USER_NUMBER` confirms the call, the call flow will appear as such:
+
+`Random Number <-> BW_NUMBER <-> USER_NUMBER` - if the `BW_NUMBER` environment variable is the number called.
+
+`Random Number <-> Other BW_NUMBER <-> BW_NUMBER <-> USER_NUMBER` - if the `BW_NUMBER` environment variable is different from the number called.
 
 # Bandwidth
 
